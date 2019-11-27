@@ -5,7 +5,7 @@ import CitiesList from "./components/cities-list/CitiesList.js";
 import FilterCity from "./components/filter/FilterCity.js";
 
 function App() {
-  const [data, setData] = useState(dataCities.cities);
+  const [data] = useState(dataCities.cities);
   const [query, setQuery] = useState("");
   return (
     <div className="App">
