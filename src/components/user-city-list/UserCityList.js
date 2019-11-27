@@ -9,7 +9,7 @@ const UserCityList = () => {
         <li></li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default UserCityList;

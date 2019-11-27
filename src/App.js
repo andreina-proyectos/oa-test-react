@@ -9,6 +9,11 @@ function App() {
   const [data] = useState(dataCities.cities);
   const [query, setQuery] = useState("");
   const [userList, setUserList] = useState([]);
+  const addCityToUserList = cityId => {
+    const selectedCity = data.find(city => city.id === cityId);
+    console.log(selectedCity);
+  };
+
   return (
     <div className="App">
       <header className="app-header">
@@ -17,7 +22,11 @@ function App() {
       <main className="app__main">
         <section className="main__filter-list-wrapper">
           <FilterCity setQuery={setQuery} />
-          <CitiesList data={data} query={query} />
+          <CitiesList
+            data={data}
+            query={query}
+            addCityToUserList={addCityToUserList}
+          />
         </section>
         <section className="main__user-list-wrapper">
           <UserCityList />
