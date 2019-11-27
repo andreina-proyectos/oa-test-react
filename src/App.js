@@ -10,7 +10,7 @@ const cityImage = "https://cdn140.picsart.com/299508582161201.png?r1024x1024";
 function App() {
   const [data] = useState(dataCities.cities);
   const [query, setQuery] = useState("");
-  const [userList, setUserList] = useState([]);
+  let [userList, setUserList] = useState([]);
   const addCityToUserList = cityId => {
     const selectedCity = data.find(city => city.id === cityId);
     if (!userList.includes(selectedCity)) {
@@ -26,10 +26,23 @@ function App() {
     setUserList([...userList]);
   };
 
-  const handleClickAll = () => {
-    const checkboxArray = document.querySelectorAll(".city__checkbox");
-    for (let checkbox of checkboxArray) {
-      checkbox.checked = true;
+  const handleClickAll = event => {
+    const allCheckbox = event.currentTarget;
+    if (allCheckbox.checked) {
+      const checkboxArray = document.querySelectorAll(".city__checkbox");
+      checkboxArray.forEach(checkbox => {
+        if (!checkbox.checked) {
+          checkbox.checked = true;
+        }
+      });
+      const citiesToSelect = data.filter(
+        city =>
+          city.name.toLowerCase().includes(query.toLowerCase()) ||
+          city.chineseName.toLowerCase().includes(query.toLowerCase())
+      );
+      setUserList(citiesToSelect);
+    } else {
+      setUserList([]);
     }
   };
 
