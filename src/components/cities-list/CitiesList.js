@@ -9,7 +9,11 @@ const CitiesList = props => {
     <div className="main__cities-list">
       <ul className="cities-list">
         {data
-          .filter(city => city.name.toLowerCase().includes(query.toLowerCase()))
+          .filter(
+            city =>
+              city.name.toLowerCase().includes(query.toLowerCase()) ||
+              city.chineseName.toLowerCase().includes(query.toLowerCase())
+          )
           .map(city => {
             return (
               <li id={city.id} key={city.id} className="cities-list__city">
