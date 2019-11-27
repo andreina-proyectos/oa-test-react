@@ -10,7 +10,7 @@ const cityImage = "https://cdn140.picsart.com/299508582161201.png?r1024x1024";
 function App() {
   const [data] = useState(dataCities.cities);
   const [query, setQuery] = useState("");
-  const [userList, setUserList] = useState([]);
+  let [userList, setUserList] = useState([]);
   const addCityToUserList = cityId => {
     const selectedCity = data.find(city => city.id === cityId);
     if (!userList.includes(selectedCity)) {
@@ -26,14 +26,47 @@ function App() {
     setUserList([...userList]);
   };
 
+  const handleClickAll = event => {
+    const allCheckbox = event.currentTarget;
+    const checkboxArray = document.querySelectorAll(".city__checkbox");
+    if (allCheckbox.checked) {
+      checkboxArray.forEach(checkbox => {
+        if (!checkbox.checked) {
+          checkbox.checked = true;
+        }
+      });
+      const citiesToSelect = data.filter(
+        city =>
+          city.name.toLowerCase().includes(query.toLowerCase()) ||
+          city.chineseName.toLowerCase().includes(query.toLowerCase())
+      );
+      setUserList(citiesToSelect);
+    } else {
+      checkboxArray.forEach(checkbox => {
+        if (checkbox.checked) {
+          checkbox.checked = false;
+        }
+      });
+      setUserList([]);
+    }
+  };
+
   return (
     <div className="App">
       <header className="app-header">
         <h1 className="header__title">Cities of China</h1>
       </header>
       <main className="app__main">
-        <section className="main__filter-list-wrapper">
+        <section className="main__filter-list-section">
           <FilterCity setQuery={setQuery} />
+          <div className="main__select-all-wrapper">
+            <input
+              onClick={handleClickAll}
+              type="checkbox"
+              className="main__all-checkbox"
+            />
+            <p className="main__all-city-text">{data.length} items</p>
+          </div>
           <CitiesList
             data={data}
             query={query}
@@ -42,7 +75,7 @@ function App() {
             cityImage={cityImage}
           />
         </section>
-        <section className="main__user-list-wrapper">
+        <section className="main__user-list-section">
           <UserCityList
             userList={userList}
             cityImage={cityImage}
