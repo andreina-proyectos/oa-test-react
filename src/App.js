@@ -6,13 +6,15 @@ import FilterCity from "./components/filter/FilterCity.js";
 
 function App() {
   const [data, setData] = useState(dataCities.cities);
+  const [query, setQuery] = useState("");
   return (
     <div className="App">
+      <p>{query}</p>
       <header className="app-header">
         <h1 className="header__title">Cities of China</h1>
       </header>
       <main className="app__main">
-        <FilterCity />
+        <FilterCity setQuery={setQuery} />
         <CitiesList data={data} />
       </main>
     </div>
