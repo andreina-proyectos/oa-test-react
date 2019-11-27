@@ -28,8 +28,8 @@ function App() {
 
   const handleClickAll = event => {
     const allCheckbox = event.currentTarget;
+    const checkboxArray = document.querySelectorAll(".city__checkbox");
     if (allCheckbox.checked) {
-      const checkboxArray = document.querySelectorAll(".city__checkbox");
       checkboxArray.forEach(checkbox => {
         if (!checkbox.checked) {
           checkbox.checked = true;
@@ -42,6 +42,11 @@ function App() {
       );
       setUserList(citiesToSelect);
     } else {
+      checkboxArray.forEach(checkbox => {
+        if (checkbox.checked) {
+          checkbox.checked = false;
+        }
+      });
       setUserList([]);
     }
   };
