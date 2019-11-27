@@ -9,13 +9,12 @@ function App() {
   const [query, setQuery] = useState("");
   return (
     <div className="App">
-      <p>{query}</p>
       <header className="app-header">
         <h1 className="header__title">Cities of China</h1>
       </header>
       <main className="app__main">
         <FilterCity setQuery={setQuery} />
-        <CitiesList data={data} />
+        <CitiesList data={data} query={query} />
       </main>
     </div>
   );

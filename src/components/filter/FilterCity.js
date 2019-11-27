@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Filter.scss";
+import "./FilterCity.scss";
 
 const FilterCity = props => {
   const { setQuery } = props;
   return (
     <div className="main__filter-wrapper">
-      <label htmlFor="city-name"></label>
+      <label htmlFor="city-filter"></label>
       <input
         onChange={event => setQuery(event.currentTarget.value)}
-        id="city-name"
+        id="city-filter"
         type="text"
         className="main__filter"
         placeholder="Search by name"
