@@ -4,10 +4,15 @@ import "./CitiesList.scss";
 const cityImage = "https://cdn140.picsart.com/299508582161201.png?r1024x1024";
 
 const CitiesList = props => {
-  const { data, query, addCityToUserList } = props;
+  const { data, query, addCityToUserList, removeCityFromUserList } = props;
   const handleCheckboxChange = event => {
     const citySelectedId = event.currentTarget.parentNode.id;
-    addCityToUserList(citySelectedId);
+    if(event.currentTarget.checked) {
+      addCityToUserList(citySelectedId);
+    }
+    else {
+      removeCityFromUserList(citySelectedId);
+    }
   };
 
   return (

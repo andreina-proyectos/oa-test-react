@@ -11,8 +11,14 @@ function App() {
   const [userList, setUserList] = useState([]);
   const addCityToUserList = cityId => {
     const selectedCity = data.find(city => city.id === cityId);
-    console.log(selectedCity);
+    userList.push(selectedCity);
+    console.log('añadiendo el elemento al array', userList);
   };
+  const removeCityFromUserList = cityId => {
+    const selectedCityPosition = data.indexOf(data.id === cityId);
+    userList.splice(selectedCityPosition, 1);
+    console.log('quitando el elemento al array', userList)
+  }
 
   return (
     <div className="App">
@@ -26,6 +32,7 @@ function App() {
             data={data}
             query={query}
             addCityToUserList={addCityToUserList}
+            removeCityFromUserList={removeCityFromUserList}
           />
         </section>
         <section className="main__user-list-wrapper">
