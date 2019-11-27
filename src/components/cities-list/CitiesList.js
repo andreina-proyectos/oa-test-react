@@ -1,16 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./CitiesList.scss";
-const cityImage = "https://cdn140.picsart.com/299508582161201.png?r1024x1024";
 
 const CitiesList = props => {
-  const { data, query, addCityToUserList, removeCityFromUserList } = props;
+  const {
+    data,
+    query,
+    addCityToUserList,
+    removeCityFromUserList,
+    cityImage
+  } = props;
   const handleCheckboxChange = event => {
     const citySelectedId = event.currentTarget.parentNode.id;
-    if(event.currentTarget.checked) {
+    if (event.currentTarget.checked) {
       addCityToUserList(citySelectedId);
-    }
-    else {
+    } else {
       removeCityFromUserList(citySelectedId);
     }
   };
@@ -34,7 +38,7 @@ const CitiesList = props => {
                 />
                 <img src={cityImage} alt={city.name} className="city__img" />
                 <p className="city__name">{city.name}</p>
-                <p className="city__">{city.chineseName}</p>
+                <p className="city__chinese-name">{city.chineseName}</p>
               </li>
             );
           })}
@@ -45,7 +49,10 @@ const CitiesList = props => {
 
 CitiesList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  query: PropTypes.string.isRequired
+  query: PropTypes.string.isRequired,
+  addCityToUserList: PropTypes.func.isRequired,
+  removeCityFromUserList: PropTypes.func.isRequired,
+  cityImage: PropTypes.string.isRequired
 };
 
 export default CitiesList;
