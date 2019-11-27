@@ -76,6 +76,9 @@ function App() {
           />
         </section>
         <section className="main__user-list-section">
+          <div className="user-list__functionality-wrapper">
+            <p className="user-list__number-items">{userList.length}</p>
+          </div>
           <UserCityList
             userList={userList}
             cityImage={cityImage}
