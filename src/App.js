@@ -43,7 +43,11 @@ function App() {
           />
         </section>
         <section className="main__user-list-wrapper">
-          <UserCityList userList={userList} cityImage={cityImage} />
+          <UserCityList
+            userList={userList}
+            cityImage={cityImage}
+            removeCityFromUserList={removeCityFromUserList}
+          />
         </section>
       </main>
     </div>
