@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    "jest/globals": true
+    jest: true
   },
   extends: [
     "eslint:recommended",
@@ -12,6 +12,11 @@ module.exports = {
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
@@ -25,12 +30,15 @@ module.exports = {
     }
   },
   plugins: [
-    'react',
-    'prettier',
-    'jest'
+    "react",
+    "prettier",
+    "jest",
+    "react-hooks"
   ],
   rules: {
     "class-methods-use-this": "off",
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
