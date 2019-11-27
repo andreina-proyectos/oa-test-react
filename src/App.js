@@ -26,6 +26,13 @@ function App() {
     setUserList([...userList]);
   };
 
+  const handleClickAll = () => {
+    const checkboxArray = document.querySelectorAll(".city__checkbox");
+    for (let checkbox of checkboxArray) {
+      checkbox.checked = true;
+    }
+  };
+
   return (
     <div className="App">
       <header className="app-header">
@@ -35,7 +42,11 @@ function App() {
         <section className="main__filter-list-section">
           <FilterCity setQuery={setQuery} />
           <div className="main__select-all-wrapper">
-            <input type="checkbox" className="main__all-checkbox" />
+            <input
+              onClick={handleClickAll}
+              type="checkbox"
+              className="main__all-checkbox"
+            />
             <p className="main__all-city-text">{data.length} items</p>
           </div>
           <CitiesList
