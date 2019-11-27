@@ -39,7 +39,8 @@ const UserCityList = props => {
 
 UserCityList.propTypes = {
   userList: PropTypes.arrayOf(PropTypes.object).isRequired,
-  cityImage: PropTypes.string.isRequired
+  cityImage: PropTypes.string.isRequired,
+  removeCityFromUserList: PropTypes.func.isRequired
 };
 
 export default UserCityList;
