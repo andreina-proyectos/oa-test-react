@@ -32,8 +32,12 @@ function App() {
         <h1 className="header__title">Cities of China</h1>
       </header>
       <main className="app__main">
-        <section className="main__filter-list-wrapper">
+        <section className="main__filter-list-section">
           <FilterCity setQuery={setQuery} />
+          <div className="main__select-all-wrapper">
+            <input type="checkbox" className="main__all-checkbox" />
+            <p className="main__all-city-text">{data.length} items</p>
+          </div>
           <CitiesList
             data={data}
             query={query}
@@ -42,7 +46,7 @@ function App() {
             cityImage={cityImage}
           />
         </section>
-        <section className="main__user-list-wrapper">
+        <section className="main__user-list-section">
           <UserCityList
             userList={userList}
             cityImage={cityImage}
