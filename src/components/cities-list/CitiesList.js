@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./CitiesList.scss";
+import { InView } from "react-intersection-observer";
 
 const CitiesList = props => {
   const {
@@ -8,8 +9,11 @@ const CitiesList = props => {
     query,
     addCityToUserList,
     removeCityFromUserList,
-    cityImage
+    cityImage,
+    pageSize,
+    setPageSize
   } = props;
+
   const handleCheckboxChange = event => {
     const citySelectedId = event.currentTarget.parentNode.parentNode.id;
     if (event.currentTarget.checked) {
@@ -23,6 +27,7 @@ const CitiesList = props => {
     <div className="main__cities-list">
       <ul className="cities-list">
         {data
+          .slice(0, pageSize)
           .filter(
             city =>
               city.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -48,6 +53,15 @@ const CitiesList = props => {
             );
           })}
       </ul>
+
+      <InView
+        as="div"
+        onChange={inView => {
+          if (inView) {
+            setPageSize(pageSize + 20);
+          }
+        }}
+      ></InView>
     </div>
   );
 };
@@ -57,7 +71,9 @@ CitiesList.propTypes = {
   query: PropTypes.string.isRequired,
   addCityToUserList: PropTypes.func.isRequired,
   removeCityFromUserList: PropTypes.func.isRequired,
-  cityImage: PropTypes.string.isRequired
+  cityImage: PropTypes.string.isRequired,
+  pageSize: PropTypes.number.isRequired,
+  setPageSize: PropTypes.func.isRequired
 };
 
 export default CitiesList;

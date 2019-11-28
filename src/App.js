@@ -11,6 +11,8 @@ function App() {
   const [data] = useState(dataCities.cities);
   const [query, setQuery] = useState("");
   let [userList, setUserList] = useState([]);
+  let [pageSize, setPageSize] = useState(20);
+
   const addCityToUserList = cityId => {
     const selectedCity = data.find(city => city.id === cityId);
     if (!userList.includes(selectedCity)) {
@@ -87,6 +89,8 @@ function App() {
             addCityToUserList={addCityToUserList}
             removeCityFromUserList={removeCityFromUserList}
             cityImage={cityImage}
+            pageSize={pageSize}
+            setPageSize={setPageSize}
           />
         </section>
         <section className="main__user-list-section">
