@@ -1,0 +1,60 @@
+@import './assets/variables';
+@import './assets/mixins';
+* {
+  margin:0;
+  padding:0;
+  list-style: none;
+  color: $color-text;
+}
+
+.App {
+  text-align: center;
+  margin:20px 40px;
+  border: $border;
+}
+
+.app-header {
+  text-align: start;
+}
+
+.header__title {
+  font-size: 18px;
+  padding:10px;
+  border-bottom: $border;
+}
+
+.app__main {
+  display: flex;
+}
+
+.main__filter-list-section {
+  @include alignCenterWithFlex();
+  border-right: $border;
+  width: 50%;
+}
+
+.main__select-all-wrapper {
+  width: 100%;
+  padding-left: 5%;
+}
+
+.main__select-all-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.main__all-city-text {
+  font-weight: $weight;
+}
+
+.main__all-checkbox {
+  margin-right: 20px;
+}
+
+
+.main__user-list-section {
+  @include alignCenterWithFlex();
+  width: 50%;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import dataCities from "./services/cities-china.json";
-import "./App.css";
+import "./App.scss";
 import CitiesList from "./components/cities-list/CitiesList.js";
 import FilterCity from "./components/filter/FilterCity.js";
 import UserCityList from "./components/user-city-list/UserCityList.js";

@@ -1,10 +1,29 @@
 @import '../../assets/variables';
+@import '../../assets/mixins';
+
+.main__cities-list {
+  width: 100%;
+}
+
+.cities-list {
+  border-top: $border;
+}
+
+.cities-list__city {
+  @include cardCityFlex();
+}
+
+.city__checkbox {
+  margin-right: 10px;
+}
 
 .city__img {
   width:50px;
   height: 50px;
+  margin-right: $margin-right;
 }
 
 .city__name {
-
+  margin-right: $margin-right;
+  font-weight: $weight;
 }

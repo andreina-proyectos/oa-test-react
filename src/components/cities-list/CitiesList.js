@@ -37,8 +37,10 @@ const CitiesList = props => {
                   className="city__checkbox"
                 />
                 <img src={cityImage} alt={city.name} className="city__img" />
-                <p className="city__name">{city.name}</p>
-                <p className="city__chinese-name">{city.chineseName}</p>
+                <div className="city__names-wrapper">
+                  <p className="city__name">{city.name}</p>
+                  <p className="city__chinese-name">{city.chineseName}</p>
+                </div>
               </li>
             );
           })}

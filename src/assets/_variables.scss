@@ -1,10 +1,18 @@
 /*colors*/
 $white: #ffffff;
 $blue: #578FE8;
-$grey-dark: #54585a;
-$color-text: $grey-dark;
-$grey--hover: #b8b8b9;
+$grey-dark: #313334a4;
+$grey-light: #b8b8b9;
+
+$color-text: #313334e0;
+$grey--hover: #F2F2F2;
 $cross-color:#616161;
 
 /*borders*/
-$border: 2px solid #AFAFAF;
+$border: 2px solid rgba(208, 211, 211, 0.568);
+
+/*margins*/
+$margin-right: 10px;
+
+/*font styles*/
+$weight: 500;

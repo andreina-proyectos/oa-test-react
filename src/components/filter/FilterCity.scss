@@ -1,7 +1,42 @@
 @import '../../assets/variables';
 
-.main__filter {
-  border:none;
-  border-bottom: 2px solid #AFAFAF;
-  background-color: transparent;
+.main__filter-wrapper {
+  margin-left: 3%;
+  position: relative;
+  width:95%;
+  border-bottom: 1.5px solid $grey-dark;
+  padding: 8px 0px;
 }
+
+.main__filter {
+  height: 30px;
+  width: 90%;
+  border: none;
+  background-color: transparent;
+  padding-left: 10%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &:focus {
+    border: 2px solid blue;
+  }
+}
+
+.fa-search {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: 2;
+  align-self: center;
+  padding: 12px 0px 0px 4%;
+  color:$grey-light;
+  font-size: 15px;
+}
+
+/*MEDIA QUERIES*/
+@media all and (min-width: 350px) {
+  .main__filter-wrapper {
+    margin-left: 0%;
+    padding-left: 0px;
+  }}
