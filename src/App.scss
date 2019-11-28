@@ -57,7 +57,6 @@
 .main__user-list-section {
   margin-top:20px;
   @include alignCenterWithFlex();
-  justify-content: flex-start;
   width: 50%;
 }
 
@@ -69,6 +68,10 @@
 
 .user-list__number-items {
   margin-left:3%;
+}
+
+.user-list__functionality-wrapper {
+  margin-bottom:20px;
 }
 
 .user-list__clear-btn {

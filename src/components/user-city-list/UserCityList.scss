@@ -7,7 +7,12 @@
 
 .user-city-list__city {
   @include cardCityFlex();
+  justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.user-city__left-side-wrapper {
+  @include cardCityFlex();
 }
 
 .city__delete-button {
