@@ -11,7 +11,7 @@ const FilterCity = props => {
         onChange={event => setQuery(event.currentTarget.value)}
         id="city-filter"
         type="text"
-        className="main__filter"
+        className="main__filter fontAwesome"
         placeholder="Search by name"
       />
     </div>
