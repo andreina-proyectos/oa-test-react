@@ -55,6 +55,27 @@
 
 
 .main__user-list-section {
+  margin-top:20px;
   @include alignCenterWithFlex();
+  justify-content: flex-start;
   width: 50%;
+}
+
+.user-list__functionality-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-list__number-items {
+  margin-left:3%;
+}
+
+.user-list__clear-btn {
+  margin-right: 3%;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: $blue;
+  font-weight: $weight;
+  font-size: 16px;
 }

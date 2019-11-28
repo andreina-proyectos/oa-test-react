@@ -71,11 +71,14 @@ function App() {
         <section className="main__filter-list-section">
           <FilterCity setQuery={setQuery} />
           <div className="main__select-all-wrapper">
-            <input
-              onClick={handleClickAll}
-              type="checkbox"
-              className="main__all-checkbox"
-            />
+            <label className="checkbox-container">
+              <input
+                onClick={handleClickAll}
+                type="checkbox"
+                className="city__checkbox"
+              />
+              <span className="main__all-checkbox checkmark"></span>
+            </label>
             <p className="main__all-city-text">{data.length} items</p>
           </div>
           <CitiesList
@@ -88,7 +91,7 @@ function App() {
         </section>
         <section className="main__user-list-section">
           <div className="user-list__functionality-wrapper">
-            <p className="user-list__number-items">{userList.length}</p>
+            <p className="user-list__number-items">{userList.length} items</p>
             <button
               className="user-list__clear-btn"
               onClick={handleClearButton}

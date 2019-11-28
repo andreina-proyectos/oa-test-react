@@ -7,28 +7,16 @@
 
 .user-city-list__city {
   @include cardCityFlex();
+  flex-wrap: wrap;
 }
 
 .city__delete-button {
   border: none;
   margin-right: $margin-right;
+  font-size: 16px;
+  background-color: transparent;
 }
 
 .user-city__name {
   font-weight: $weight;
 }
-
-
-
-
-// <button
-// onClick={handleClickDelete}
-// className="city__delete-button"
-// >
-// <i className="fas fa-times" aria-label="Delete button"></i>
-// </button>
-// <img src={cityImage} alt={city.name} className="city__img" />
-// <div className="user-city__text-wrapper">
-// <p className="user-city__name">{city.name}</p>
-// <p className="user-city__chinese-name">{city.chineseName}</p>
-// </div>

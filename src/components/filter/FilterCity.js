@@ -7,7 +7,7 @@ const FilterCity = props => {
   return (
     <div className="main__filter-wrapper">
       <label htmlFor="city-filter"></label>
-      <i class="fa fa-search"></i>
+      <i className="fa fa-search"></i>
       <input
         onChange={event => setQuery(event.currentTarget.value)}
         id="city-filter"
