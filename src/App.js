@@ -51,6 +51,17 @@ function App() {
     }
   };
 
+  const handleClearButton = () => {
+    setUserList([]);
+    const checkboxArray = document.querySelectorAll(".city__checkbox");
+    checkboxArray.forEach(checkbox => {
+      if (checkbox.checked) {
+        checkbox.checked = false;
+      }
+    });
+    document.querySelector(".main__all-checkbox").checked = false;
+  };
+
   return (
     <div className="App">
       <header className="app-header">
@@ -78,6 +89,12 @@ function App() {
         <section className="main__user-list-section">
           <div className="user-list__functionality-wrapper">
             <p className="user-list__number-items">{userList.length}</p>
+            <button
+              className="user-list__clear-btn"
+              onClick={handleClearButton}
+            >
+              CLEAR
+            </button>
           </div>
           <UserCityList
             userList={userList}
