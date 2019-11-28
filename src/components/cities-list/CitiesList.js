@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./CitiesList.scss";
+import { InView } from "react-intersection-observer";
 
 const CitiesList = props => {
   const {
@@ -56,7 +57,18 @@ const CitiesList = props => {
             );
           })}
       </ul>
-      <button onClick={handleLoadMoreCities}>CARGAR 20 MÁS</button>
+
+      <InView
+        as="div"
+        onChange={(inView, entry) => {if(inView) {setPageSize(pageSize + 20)}}}
+      >
+        <button onClick={handleLoadMoreCities}>
+          CARGAR 20 MÁS
+        </button>
+        <h2>
+          Plain children are always rendered. Use onChange to monitor state.
+        </h2>
+      </InView>
     </div>
   );
 };
