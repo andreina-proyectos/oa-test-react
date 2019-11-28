@@ -23,10 +23,6 @@ const CitiesList = props => {
     }
   };
 
-  const handleLoadMoreCities = () => {
-    setPageSize(pageSize + 20);
-  };
-
   return (
     <div className="main__cities-list">
       <ul className="cities-list">
@@ -60,15 +56,12 @@ const CitiesList = props => {
 
       <InView
         as="div"
-        onChange={(inView, entry) => {if(inView) {setPageSize(pageSize + 20)}}}
-      >
-        <button onClick={handleLoadMoreCities}>
-          CARGAR 20 MÁS
-        </button>
-        <h2>
-          Plain children are always rendered. Use onChange to monitor state.
-        </h2>
-      </InView>
+        onChange={inView => {
+          if (inView) {
+            setPageSize(pageSize + 20);
+          }
+        }}
+      ></InView>
     </div>
   );
 };
