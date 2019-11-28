@@ -11,7 +11,7 @@ const CitiesList = props => {
     cityImage
   } = props;
   const handleCheckboxChange = event => {
-    const citySelectedId = event.currentTarget.parentNode.id;
+    const citySelectedId = event.currentTarget.parentNode.parentNode.id;
     if (event.currentTarget.checked) {
       addCityToUserList(citySelectedId);
     } else {
@@ -31,14 +31,19 @@ const CitiesList = props => {
           .map(city => {
             return (
               <li id={city.id} key={city.id} className="cities-list__city">
-                <input
-                  onChange={handleCheckboxChange}
-                  type="checkbox"
-                  className="city__checkbox"
-                />
+                <label className="checkbox-container">
+                  <input
+                    onChange={handleCheckboxChange}
+                    type="checkbox"
+                    className="city__checkbox"
+                  />
+                  <span className="checkmark"></span>
+                </label>
                 <img src={cityImage} alt={city.name} className="city__img" />
-                <p className="city__name">{city.name}</p>
-                <p className="city__chinese-name">{city.chineseName}</p>
+                <div className="city__names-wrapper">
+                  <p className="city__name">{city.name}</p>
+                  <p className="city__chinese-name">{city.chineseName}</p>
+                </div>
               </li>
             );
           })}

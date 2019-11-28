@@ -1,0 +1,51 @@
+@import '../../assets/variables';
+
+.main__filter-wrapper {
+  position: relative;
+  width:95%;
+  border-bottom: 1.5px solid $grey-dark;
+  padding: 8px 0px;
+  left:0px;
+}
+
+.main__filter {
+  height: 30px;
+  width: 80%;
+  border: none;
+  background-color: transparent;
+  padding-left: 15%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &:focus {
+    border: 2px solid blue;
+  }
+}
+
+.fa-search {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: 2;
+  padding: 12px 0px 0px 2px;
+  color:$grey-light;
+  font-size: 14px;
+}
+
+/*MEDIA QUERIES*/
+@media all and (min-width: 500px) {
+  .main__filter-wrapper {
+    padding-left: 0px;
+  }
+  .main__filter {
+    width: 100%;
+    padding-left: 20px;
+  }
+  
+  .fa-search {
+    left: 0px;
+    padding: 12px 0px 0px 2px;
+    font-size: 15px;
+  }
+}

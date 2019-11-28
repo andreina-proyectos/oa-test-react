@@ -27,8 +27,10 @@ const UserCityList = props => {
                 <i className="fas fa-times" aria-label="Delete button"></i>
               </button>
               <img src={cityImage} alt={city.name} className="city__img" />
-              <p className="user-city__name">{city.name}</p>
-              <p className="user-city__chinese-name">{city.chineseName}</p>
+              <div className="user-city__text-wrapper">
+                <p className="user-city__name">{city.name}</p>
+                <p className="user-city__chinese-name">{city.chineseName}</p>
+              </div>
             </li>
           );
         })}

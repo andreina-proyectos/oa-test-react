@@ -1,3 +1,22 @@
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.main__user-city-list {
+  width: 100%;
+}
+
+.user-city-list__city {
+  @include cardCityFlex();
+  flex-wrap: wrap;
+}
+
 .city__delete-button {
   border: none;
+  margin-right: $margin-right;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.user-city__name {
+  font-weight: $weight;
 }
