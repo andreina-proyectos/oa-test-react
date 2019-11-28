@@ -8,8 +8,11 @@ const CitiesList = props => {
     query,
     addCityToUserList,
     removeCityFromUserList,
-    cityImage
+    cityImage,
+    pageSize,
+    setPageSize
   } = props;
+
   const handleCheckboxChange = event => {
     const citySelectedId = event.currentTarget.parentNode.parentNode.id;
     if (event.currentTarget.checked) {
@@ -19,10 +22,15 @@ const CitiesList = props => {
     }
   };
 
+  const handleLoadMoreCities = () => {
+    setPageSize(pageSize + 20);
+  };
+
   return (
     <div className="main__cities-list">
       <ul className="cities-list">
         {data
+          .slice(0, pageSize)
           .filter(
             city =>
               city.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -48,6 +56,7 @@ const CitiesList = props => {
             );
           })}
       </ul>
+      <button onClick={handleLoadMoreCities}>CARGAR 20 MÁS</button>
     </div>
   );
 };
@@ -57,7 +66,9 @@ CitiesList.propTypes = {
   query: PropTypes.string.isRequired,
   addCityToUserList: PropTypes.func.isRequired,
   removeCityFromUserList: PropTypes.func.isRequired,
-  cityImage: PropTypes.string.isRequired
+  cityImage: PropTypes.string.isRequired,
+  pageSize: PropTypes.number.isRequired,
+  setPageSize: PropTypes.func.isRequired
 };
 
 export default CitiesList;
