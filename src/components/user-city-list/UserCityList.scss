@@ -7,8 +7,10 @@
 
 .user-city-list__city {
   @include cardCityFlex();
+  @include resetMarginPadding();
   justify-content: space-between;
   flex-wrap: wrap;
+  
 }
 
 .user-city__left-side-wrapper {
@@ -17,11 +19,57 @@
 
 .city__delete-button {
   border: none;
-  margin-right: $margin-right;
+  padding-right: 5%;
   font-size: 16px;
   background-color: transparent;
 }
 
 .user-city__name {
   font-weight: $weight;
+}
+
+@media all and (max-width: 400px) {
+  .user-city-list__city {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-city__left-side-wrapper {
+    flex-direction: column;
+    @include resetMarginPadding();
+  }
+  .user-city-list__city {
+    flex-direction: column-reverse;
+    padding:0px;
+    margin:0px 0px 20px 0px;
+    font-size: $size-14;
+  }
+  .user-city__text-wrapper {
+
+    padding:10px 0 0 0;
+  }
+  .user-city__img {
+    padding: 10px 0px;
+    margin:0px;
+  }
+  .city__delete-button {
+    @include resetMarginPadding();
+  }
+}
+
+@media all and (min-width: 400px) {
+  * {
+    font-size: 13px;
+  };
+
+  .user-city__left-side-wrapper {
+    padding:10px;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .city__delete-button {
+    margin-right: 20px;
+  }
 }

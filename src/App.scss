@@ -82,3 +82,12 @@
   font-weight: $weight;
   font-size: 16px;
 }
+
+@media all and (max-width: 400px) {
+  .main__all-city-text {
+    font-size: $size-14;
+  }
+  .user-list__number-items {
+    font-size: $size-14;
+  }
+}
