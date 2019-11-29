@@ -1,4 +1,6 @@
-#Orbital Ads test
+#Orbital Ads test.
+
+Web responsive and mobile first with China cities.
 
 ## Requirements ⚙️
 
