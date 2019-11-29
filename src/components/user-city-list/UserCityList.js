@@ -21,7 +21,11 @@ const UserCityList = props => {
               className="user-city-list__city"
             >
               <div className="user-city__left-side-wrapper">
-                <img src={cityImage} alt={city.name} className="city__img user-city__img " />
+                <img
+                  src={cityImage}
+                  alt={city.name}
+                  className="city__img user-city__img "
+                />
                 <div className="user-city__text-wrapper">
                   <p className="user-city__name">{city.name}</p>
                   <p className="user-city__chinese-name">{city.chineseName}</p>
