@@ -1,6 +1,6 @@
 #Orbital Ads test.
 
-Web responsive and mobile first with China cities.
+Web responsive and mobile first with China cities. To know more, see decisions document.
 
 ## Requirements ⚙️
 
@@ -56,10 +56,3 @@ In addition, the project uses Travis as a continuous integration server so that 
 To execute the tasks, let's just run:
 
 ### `npm run ci`
-
-I used Git as a control version system.
-The way I named my branches followed the git-flow rules.
-Branch master: production
-Branch develop: development
-
-I created Pull Request to check changes on my own code before merge each branch feature/ to develop. Travis helped me to ensure the CI.
