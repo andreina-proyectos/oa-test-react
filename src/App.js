@@ -25,6 +25,11 @@ function App() {
       city => city.id === cityId
     );
     userList.splice(unSelectedCityPosition, 1);
+    const checkboxNodeList = document.querySelectorAll(".city__checkbox");
+    const willUnselect = Array.from(checkboxNodeList).find(
+      checkbox => checkbox.parentNode.parentNode.id === cityId
+    );
+    willUnselect.checked = false;
     setUserList([...userList]);
   };
 

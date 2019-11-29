@@ -57,7 +57,6 @@
 .main__user-list-section {
   margin-top:20px;
   @include alignCenterWithFlex();
-  justify-content: flex-start;
   width: 50%;
 }
 
@@ -71,6 +70,10 @@
   margin-left:3%;
 }
 
+.user-list__functionality-wrapper {
+  margin-bottom:20px;
+}
+
 .user-list__clear-btn {
   margin-right: 3%;
   background-color: transparent;
@@ -78,4 +81,13 @@
   color: $blue;
   font-weight: $weight;
   font-size: 16px;
+}
+
+@media all and (max-width: 400px) {
+  .main__all-city-text {
+    font-size: $size-14;
+  }
+  .user-list__number-items {
+    font-size: $size-14;
+  }
 }

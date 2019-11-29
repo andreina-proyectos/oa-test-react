@@ -20,17 +20,23 @@ const UserCityList = props => {
               key={index}
               className="user-city-list__city"
             >
+              <div className="user-city__left-side-wrapper">
+                <img
+                  src={cityImage}
+                  alt={city.name}
+                  className="city__img user-city__img "
+                />
+                <div className="user-city__text-wrapper">
+                  <p className="user-city__name">{city.name}</p>
+                  <p className="user-city__chinese-name">{city.chineseName}</p>
+                </div>
+              </div>
               <button
                 onClick={handleClickDelete}
                 className="city__delete-button"
               >
                 <i className="fas fa-times" aria-label="Delete button"></i>
               </button>
-              <img src={cityImage} alt={city.name} className="city__img" />
-              <div className="user-city__text-wrapper">
-                <p className="user-city__name">{city.name}</p>
-                <p className="user-city__chinese-name">{city.chineseName}</p>
-              </div>
             </li>
           );
         })}

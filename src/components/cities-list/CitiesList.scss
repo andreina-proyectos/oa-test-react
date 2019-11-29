@@ -77,8 +77,6 @@
   transform: rotate(45deg);
 }
 
-/* LO DEL CHECKBOX*/
-
 .city__img {
   width:50px;
   height: 50px;
@@ -88,4 +86,30 @@
 .city__name {
   margin-right: $margin-right;
   font-weight: $weight;
+}
+
+//MEDIA QUERIES
+
+@media all and (max-width: 450px) {
+  *{
+    font-size: $size-14;
+  }
+  .cities-list__city {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .city__img {
+    padding:20px 0px 0px 0px;
+    margin:0;
+  }
+  .city__name {
+    @include resetMarginPadding();
+    font-size: $size-14;
+  }
+  .checkmark {
+    display: inline-block;
+    margin-left: 5px;
+  }
 }
