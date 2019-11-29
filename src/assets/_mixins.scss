@@ -1,0 +1,21 @@
+@mixin alignCenterWithFlex() {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin cardCityFlex() {
+  padding:20px;
+  display: flex;
+  align-items: center;
+  &:hover{
+    background-color: $grey--hover;
+  }
+}
+
+@mixin resetMarginPadding() {
+  margin:0px;
+  padding:0px;
+}
+
