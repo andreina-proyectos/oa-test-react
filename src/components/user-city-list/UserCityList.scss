@@ -9,8 +9,7 @@
   @include cardCityFlex();
   @include resetMarginPadding();
   justify-content: space-between;
-  flex-wrap: wrap;
-  
+  padding-left: 15px;
 }
 
 .user-city__left-side-wrapper {
@@ -28,7 +27,7 @@
   font-weight: $weight;
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 450px) {
   .user-city-list__city {
     width: 100%;
     flex-direction: column;
