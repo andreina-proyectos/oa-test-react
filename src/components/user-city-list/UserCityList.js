@@ -5,6 +5,7 @@ import "./UserCityList.scss";
 const UserCityList = props => {
   const { userList, cityImage, removeCityFromUserList } = props;
   const handleClickDelete = event => {
+    document.querySelector(".city__checkbox").checked = false;
     const citySelectedId = event.currentTarget.parentNode.id;
     const cityToRemoveId = citySelectedId.replace("user-", "");
     removeCityFromUserList(cityToRemoveId);

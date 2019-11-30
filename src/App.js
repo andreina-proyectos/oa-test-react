@@ -21,6 +21,7 @@ function App() {
     }
   };
   const removeCityFromUserList = cityId => {
+    document.querySelector(".main__all-checkbox").checked = false;
     const unSelectedCityPosition = userList.findIndex(
       city => city.id === cityId
     );
@@ -66,7 +67,6 @@ function App() {
         checkbox.checked = false;
       }
     });
-    document.querySelector(".main__all-checkbox").checked = false;
   };
 
   return (

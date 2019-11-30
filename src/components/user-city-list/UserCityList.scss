@@ -18,9 +18,10 @@
 
 .city__delete-button {
   border: none;
-  padding-right: 5%;
+  padding-right: 10px;
   font-size: 16px;
   background-color: transparent;
+  text-align: center;
 }
 
 .user-city__name {
@@ -45,7 +46,6 @@
     font-size: $size-14;
   }
   .user-city__text-wrapper {
-
     padding:10px 0 0 0;
   }
   .user-city__img {
